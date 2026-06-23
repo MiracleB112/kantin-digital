@@ -1,0 +1,192 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width:100%;
+    max-width:350px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.logo-custom {
+    width: 110px !important;    /* Ukuran lebar logo disamakan agar kecil dan pas */
+    height: 110px !important;   /* Ukuran tinggi logo */
+    object-fit: contain;       /* Menjaga proporsi gambar logo Anda agar tetap tajam */
+    margin: 0 auto 15px;       /* Memposisikan pas di tengah card login admin */
+    display: block;            /* Memaksa elemen berdiri sendiri */
+}
+
+.title {
+    color: #212529;
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    border-color: #212529;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(33, 37, 41, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: #212529;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+}
+
+.btn-submit:hover {
+    background: #000;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* =====================
+   RESPONSIVE LOGIN ADMIN
+===================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .login-card{
+        width:100%;
+        max-width:400px;
+        padding:25px;
+    }
+
+    .logo-custom{
+        width:90px !important;
+        height:90px !important;
+    }
+
+    .title{
+        font-size:20px;
+    }
+
+    .subtitle{
+        font-size:13px;
+    }
+
+    .form-group input{
+        font-size:16px;
+    }
+
+    .btn-submit{
+        font-size:15px;
+    }
+}
+
+/* HP Kecil */
+
+@media (max-width:480px){
+
+    body{
+        padding:12px;
+    }
+
+    .login-card{
+        width:100%;
+        max-width:100%;
+        padding:20px;
+        padding:20px;
+        border-radius:12px;
+    }
+
+    .logo-custom{
+        width:80px !important;
+        height:80px !important;
+    }
+
+    .title{
+        font-size:18px;
+    }
+
+    .subtitle{
+        font-size:12px;
+    }
+
+    .form-group label{
+        font-size:13px;
+    }
+
+    .form-group input{
+        padding:10px;
+    }
+
+    .btn-submit{
+        padding:11px;
+        font-size:14px;
+    }
+
+}

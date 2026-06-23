@@ -1,0 +1,923 @@
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #f8f9fa; 
+    margin: 0; 
+    padding: 0; 
+    color: #333; 
+}
+
+/* --- HEADER UI --- */
+.header { 
+    background-color: #fff; 
+    padding: 15px 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #dee2e6; 
+}
+.user-info h3 { 
+    margin: 0; 
+    color: #f24e1e; 
+    font-size: 18px; 
+}
+.user-info span { 
+    font-size: 13px; 
+    color: #6c757d; 
+}
+.btn-logout { 
+    color: #495057; 
+    font-size: 14px; 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+    text-decoration: none; 
+}
+
+/* --- NAVIGATION & CONTAINER --- */
+.container { 
+    padding: 30px 40px; 
+}
+.sub-nav { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 25px; 
+}
+.btn-nav { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    font-size: 14px; 
+    text-decoration: none; 
+}
+.btn-nav.active { 
+    background: #f24e1e; 
+    color: #fff; 
+}
+.btn-nav.inactive { 
+    background: #fff; 
+    color: #495057; 
+    border: 1px solid #dee2e6; 
+}
+
+/* --- 4 TOP CARDS LAYOUT --- */
+.top-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.card-stat-mini {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #dee2e6;
+}
+.stat-label {
+    font-size: 13px;
+    color: #6c757d;
+    font-weight: 500;
+}
+.stat-number {
+    margin: 5px 0 0 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.color-orange { color: #f24e1e; }
+.color-blue { color: #007bff; }
+.stat-icon {
+    font-size: 24px;
+    opacity: 0.4;
+}
+
+/* Main Solid Cards (Pendapatan) */
+.card-stat-main {
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+.bg-green { background-color: #00c853; }
+.bg-orange { background-color: #ff5221; }
+
+.stat-label-main {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+.stat-number-main {
+    margin: 5px 0 0 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.stat-icon-main {
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- MAIN CONTENT LAYOUT GRID (Kiri & Kanan) --- */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.panel-card-layout {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #dee2e6;
+}
+.panel-title-bold {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.panel-title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.panel-title-bold-inline {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* --- SUMMARY LIST DETAILS --- */
+.summary-list {
+    display: flex;
+    flex-direction: column;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #dee2e6;
+}
+.summary-item.sub-item {
+    padding-left: 20px;
+    background-color: #fafafa;
+    border-bottom: 1px dashed #dee2e6;
+    font-size: 13px;
+}
+.summary-item.spacer {
+    margin-top: 10px;
+}
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+/* Helper Class Text */
+.text-green { color: #00c853; }
+.text-blue { color: #007bff; }
+.text-red { color: #ff5221; }
+.text-muted { color: #6c757d; }
+.font-bold { font-weight: bold; }
+
+/* --- BEST SELLER ITEMS --- */
+.best-seller-list {
+    display: flex;
+    flex-direction: column;
+}
+.best-seller-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+.best-seller-item:last-child {
+    border-bottom: none;
+}
+.item-rank-badge {
+    width: 24px;
+    height: 24px;
+    background-color: #ffb300;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 12px;
+}
+.item-menu-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.menu-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+.menu-sold {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 2px;
+}
+
+/* --- LEGACY/COMPATIBILITY STYLES --- */
+.panel-card { 
+    background: #fff; 
+    border-radius: 12px; 
+    padding: 25px; 
+    border: 1px solid #dee2e6; 
+}
+.form-row { display: flex; gap: 20px; margin-bottom: 15px; }
+.form-cell { flex: 1; display: flex; flex-direction: column; }
+.form-cell input, .form-cell select { padding: 11px; border: 1px solid #ced4da; border-radius: 8px; width: 100%; box-sizing: border-box; }
+.btn-submit { background: #f24e1e; color: #fff; padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+/* --- CSS STRUKTUR BARU LAYOUT KELOLA MENU --- */
+
+.panel-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid #dee2e6;
+}
+
+.katalog-container-full {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid #dee2e6;
+}
+
+/* Layout Form Baris */
+.form-row-layout {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group-cell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-cell-twothird {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-cell-onethird {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row-layout label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 6px;
+}
+
+.form-row-layout input[type="text"],
+.form-row-layout input[type="number"],
+.form-row-layout select {
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.input-file-clean {
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.btn-submit-menu {
+    background-color: #f24e1e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-submit-menu:hover {
+    background-color: #d63f13;
+}
+
+/* --- GRID SYSTEM UNTUK KATALOG BARU --- */
+.menu-grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Komponen Card */
+.menu-item-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Jika status Habis */
+.card-habis {
+    opacity: 0.65;
+    background-color: #fafafa;
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 140px;
+    background-color: #f8f9fa;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-item-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.menu-item-title {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.menu-item-desc {
+    font-size: 12px;
+    color: #6c757d;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    height: 34px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.menu-item-price {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    color: #00c853;
+    font-weight: bold;
+}
+
+/* Row Action Panel */
+.menu-item-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    align-items: center;
+}
+
+.btn-toggle-ready {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.style-active {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.style-inactive {
+    background-color: #ffebee;
+    color: #c62828;
+    border-color: #ffcdd2;
+}
+
+.btn-trash-box {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    padding: 7px 9px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+.btn-trash-box:hover {
+    background-color: #ffebee;
+}
+
+/* --- CSS STRUKTUR GRID CARD PESANAN MASUK (GAMBAR 1) --- */
+
+.panel-title-bold {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.orders-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* Base Container Utama Card */
+.order-main-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-main-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+/* Pewarnaan Border Kiri Sesuai Status Alur */
+.border-pending {
+    border-left: 5px solid #ff9800; /* Orange */
+}
+.border-diproses {
+    border-left: 5px solid #2196f3; /* Biru */
+}
+.border-siap {
+    border-left: 5px solid #9c27b0; /* Ungu */
+}
+.border-selesai {
+    border-left: 5px solid #4caf50; /* Hijau */
+    opacity: 0.85;
+}
+
+/* Desain Komponen Atas Card */
+.order-card-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f2f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+}
+
+.order-id-badge {
+    font-weight: bold;
+    color: #2b2b2b;
+    font-size: 14px;
+}
+
+.order-time {
+    font-size: 11px;
+    color: #888;
+    margin-left: 6px;
+}
+
+/* Pengaturan Teks Badge */
+.badge-status {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.state-pending {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+.state-diproses {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+.state-siap-diambil {
+    background-color: #f3e5f5;
+    color: #4a148c;
+}
+.state-selesai {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+/* Isi Tengah Card */
+.order-card-body {
+    padding: 16px;
+    flex: 1;
+}
+
+.customer-name {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.order-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.item-product-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #444;
+}
+
+.item-name {
+    font-weight: 500;
+}
+
+.item-qty {
+    font-weight: bold;
+    color: #f24e1e;
+}
+
+/* Bagian Bawah Card */
+.order-card-footer {
+    padding: 14px 16px;
+    border-top: 1px solid #f1f2f4;
+    background-color: #fafafa;
+}
+
+.total-price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.total-label {
+    font-size: 12px;
+    color: #777;
+}
+
+.total-amount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00c853;
+}
+
+/* Sektor Tombol Varian Aksi Dinamis */
+.action-button-zone {
+    width: 100%;
+}
+
+.action-button-zone button {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+    color: white;
+}
+
+.btn-action-process {
+    background-color: #ff9800;
+}
+.btn-action-process:hover {
+    background-color: #e65100;
+}
+
+.btn-action-ready {
+    background-color: #9c27b0;
+}
+.btn-action-ready:hover {
+    background-color: #7b1fa2;
+}
+
+.btn-action-done {
+    background-color: #2196f3;
+}
+.btn-action-done:hover {
+    background-color: #0d47a1;
+}
+
+.text-completed {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: #4caf50;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+
+/* edit_menu /hapus_menu */
+.menu-actions{
+    display:flex;
+    gap:8px;
+}
+
+.btn-edit{
+    background:#2196f3;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.btn-delete{
+    background:#f44336;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* =======================
+   EDIT MENU
+======================= */
+
+.edit-container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.edit-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.edit-header h2{
+    color:#f24e1e;
+    margin-bottom:8px;
+}
+
+.edit-header p{
+    color:#777;
+}
+
+.edit-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    display:grid;
+    grid-template-columns:350px 1fr;
+}
+
+.preview-side{
+    background:#fafafa;
+    padding:30px;
+    text-align:center;
+    border-right:1px solid #eee;
+}
+
+.preview-side img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.upload-btn{
+    display:inline-block;
+    background:#f24e1e;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.form-side{
+    padding:35px;
+}
+
+.form-side label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.form-side input,
+.form-side select,
+.form-side textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.form-side input:focus,
+.form-side textarea:focus,
+.form-side select:focus{
+    outline:none;
+    border-color:#f24e1e;
+}
+
+.btn-group-edit{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.btn-save{
+    background:#f24e1e;
+    color:white;
+    border:none;
+    padding:13px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-cancel{
+    background:#e9ecef;
+    color:#333;
+    padding:13px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-save:hover{
+    transform:translateY(-2px);
+}
+
+
+.filter-container{
+    margin:15px 0;
+    display:flex;
+    gap:12px;
+}
+
+.filter-btn{
+    padding:10px 16px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    text-decoration:none;
+    background:#fff;
+    color:#333;
+    font-weight:500;
+    transition:0.2s;
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-btn:hover{
+    transform:translateY(-2px);
+    border-color:#999;
+}
+
+.filter-btn.active{
+    background:#333;
+    color:#fff;
+    border-color:#333;
+}
+
+/* ==================================
+   RESPONSIVE MOBILE PENJUAL
+================================== */
+
+@media (max-width: 768px){
+
+    .header{
+        padding:15px;
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .sub-nav{
+        flex-wrap:wrap;
+    }
+
+    .btn-nav{
+        flex:1 1 calc(50% - 10px);
+        text-align:center;
+    }
+
+    .top-stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .main-content-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-row-layout{
+        flex-direction:column;
+    }
+
+    .form-row{
+        flex-direction:column;
+    }
+
+    .edit-card{
+        grid-template-columns:1fr;
+    }
+
+    .preview-side{
+        border-right:none;
+        border-bottom:1px solid #eee;
+    }
+
+    .orders-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu-grid-view{
+        grid-template-columns:1fr;
+    }
+
+    .panel-card,
+    .katalog-container-full{
+        padding:15px;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    .user-info h3{
+        font-size:16px;
+    }
+
+    .panel-title-bold{
+        font-size:16px;
+    }
+
+    .stat-number{
+        font-size:20px;
+    }
+
+    .stat-number-main{
+        font-size:18px;
+    }
+
+    .menu-item-image{
+        height:180px;
+    }
+
+    .btn-nav{
+        font-size:12px;
+        padding:10px;
+    }
+
+    .btn-submit-menu,
+    .btn-save,
+    .btn-cancel{
+        width:100%;
+        text-align:center;
+    }
+
+    .btn-group-edit{
+        flex-direction:column;
+    }
+
+}
